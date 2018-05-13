@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>QR Code Generator - {% block title%}{% endblock title%}</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<!-- CSS -->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap-theme.min.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/custom-fonts.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/qrcode-view.css' %}">
+
+		<!-- JavaScript -->
+		<script type="text/javascript" src="{% static 'js/jquery-3.2.1.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+	</head>
+
+	<body>
+	<nav class="navbar navbar-inverse custom-navbar-style">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+					<span class="sr-only">Trocar Navegação</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand title" href="/">QR Code Generator</a>
+			</div>
+
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav menu-options">
+					<li {% block active_home %}{% endblock active_home %}><a href="/">Página Principal</a></li>
+					<li {% block active_latest %}{% endblock active_latest %}><a href="/latest/">Últimos QR Codes</a></li>
+					<li {% block active_top %}{% endblock active_top %}><a href="/top/">Top QR Codes</a></li>
+					<li {% block active_about %}{% endblock active_about %}><a href="/about/">Sobre</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	{% block content %}{% endblock content %}
+	</body>
+</html>

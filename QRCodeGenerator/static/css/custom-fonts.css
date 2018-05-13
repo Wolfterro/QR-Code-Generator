@@ -1,0 +1,21 @@
+@font-face {
+    font-family: LibreBaskerville-Regular;
+    src: url('../fonts/LibreBaskerville-Regular.ttf');
+}
+@font-face {
+    font-family: LibreBaskerville-Bold;
+    src: url('../fonts/LibreBaskerville-Bold.ttf');
+}
+@font-face {
+    font-family: LibreBaskerville-Italic;
+    src: url('../fonts/LibreBaskerville-Italic.ttf');
+}
+
+@font-face {
+    font-family: Skranji-Regular;
+    src: url('../fonts/Skranji-Regular.ttf');
+}
+@font-face {
+    font-family: Skranji-Bold;
+    src: url('../fonts/Skranji-Bold.ttf');
+}

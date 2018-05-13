@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}QR Code: {{ qrcode_title }}{% endblock title %}
+
+{% block content %}
+<div class="wrapper container">
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+
+		<div class="col-md-8">
+			<div class="main-div-qrcode">
+				<h1 class="qrcode-title">{{ qrcode_title }}</h1>
+				{% if qrcode_description %}
+					<p class="qrcode-description">{{ qrcode_description}}</p>
+				{% else %}
+					<p class="qrcode-description-null">Sem descrição!</p>
+				{% endif %}
+
+				<img src="{{ qrcode_image_url }}" class="img-thumbnail" width="600" height="600" alt="{{ qrcode_title }}">
+
+				<br>
+				<h1 class="tags-title">Tags:</h1>
+				{% if qrcode_tags %}
+					{% for tag in qrcode_tags %}
+						<a href="#" class="btn btn-default tags-values" role="button">{{ tag }}</a>
+					{% endfor %}
+				{% else %}
+					<p class="qrcode-description-null">Sem tags!</p>
+				{% endif %}
+			</div>
+		</div>
+
+		<div class="col-md-2">
+		</div>
+	</div>
+</div>
+{% endblock content %}

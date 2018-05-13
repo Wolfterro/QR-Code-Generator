@@ -1,0 +1,42 @@
+.main-div-qrcode {
+	display: block;
+	text-align: center;
+	align-content: center;
+}
+
+.qrcode-title {
+	font-family: Skranji-Bold;
+	font-size: 56px;
+}
+
+.qrcode-description {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-family: Skranji-Regular;
+	font-size: 24px;
+}
+
+.qrcode-description-null {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-family: LibreBaskerville-Italic;
+	font-size: 18px;
+}
+
+.tags-title {
+	font-family: Skranji-Regular;
+	font-size: 24px;
+}
+
+.tags-values {
+	font-family: Skranji-Regular;
+	font-size: 16px;
+
+	max-height: 100%;
+	max-width: 100%;
+
+	margin-left: 15px;
+	margin-bottom: 15px;
+	border: 1px solid #333;
+	border-radius: 4px;
+}
