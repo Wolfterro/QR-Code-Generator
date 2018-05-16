@@ -12,6 +12,7 @@
 		<link rel="stylesheet" type="text/css" href="{% static 'css/custom-fonts.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
 		<link rel="stylesheet" type="text/css" href="{% static 'css/qrcode-view.css' %}">
 
 		<!-- JavaScript -->
@@ -38,6 +39,16 @@
 					<li {% block active_latest %}{% endblock active_latest %}><a href="/latest/">Últimos QR Codes</a></li>
 					<li {% block active_top %}{% endblock active_top %}><a href="/top/">Top QR Codes</a></li>
 					<li {% block active_about %}{% endblock active_about %}><a href="/about/">Sobre</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+				{% if user.is_authenticated %}
+					<li><a href="#" class="login-fields"><span class="glyphicon glyphicon-user"></span> {{ user }}</a></li>
+					<li><a href="/logout/" class="login-fields"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+				{% else %}
+					<li {% block active_signup %}{% endblock active_signup %}><a href="/signup/" class="login-fields"><span class="glyphicon glyphicon-user"></span> Inscreva-se</a></li>
+					<li {% block active_login %}{% endblock active_login %}><a href="/login/" class="login-fields"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+				{% endif %}
 				</ul>
 			</div>
 		</div>

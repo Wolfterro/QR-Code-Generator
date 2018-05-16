@@ -28,6 +28,17 @@
 				{% else %}
 					<p class="qrcode-description-null">Sem tags!</p>
 				{% endif %}
+
+				<br>
+				<h1 class="tags-title">Criado por:</h1>
+				{% if qrcode_author %}
+					<p class="user-name">{{ qrcode_author }}</p>
+				{% else %}
+					<p class="qrcode-description-null">Anonymous</p>
+				{% endif %}
+
+				<h1 class="tags-title">Criado em:</h1>
+				<p class="qrcode-description-null">{{ qrcode_created }}</p>
 			</div>
 		</div>
 

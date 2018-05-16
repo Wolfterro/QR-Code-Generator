@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.views import View
-from django.http import HttpResponseNotFound
+from django.http import HttpResponseNotFound, HttpResponseRedirect
+from django.contrib.auth import logout
+from django.conf import settings
 
 from Generator.models import QRCode
 from Website.forms import CreateQRCodeForm
@@ -25,6 +27,8 @@ class QRCodeView(View):
             "qrcode_image_url": qrcode.get_image_url(),
             "qrcode_title": qrcode.title,
             "qrcode_tags": tags,
+            "qrcode_created": qrcode.created,
+            "qrcode_author": qrcode.author,
             "qrcode_description": qrcode.description
         }
 
@@ -60,3 +64,16 @@ class AboutView(View):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name, context={})
+
+
+class SignUpView(View):
+    template_name = 'signup.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name, context={})
+
+
+class LogoutView(View):
+    def get(self, request, *args, **kwargs):
+        logout(request)
+        return HttpResponseRedirect(settings.LOGIN_REDIRECT_URL)

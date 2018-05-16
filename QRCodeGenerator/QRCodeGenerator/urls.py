@@ -17,9 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
+from django.contrib.auth import views as auth_views
 
 from Generator.views import GenerateQRCodeView
-from Website.views import QRCodeView, HomeView, TopQRCodesView, LatestQRCodesView, AboutView
+from Website.views import (QRCodeView,
+                           HomeView,
+                           TopQRCodesView,
+                           LatestQRCodesView,
+                           AboutView,
+                           SignUpView,
+                           LogoutView)
 
 urlpatterns = [
     path('grappelli/', include('grappelli.urls')), # grappelli URLS
@@ -31,6 +38,12 @@ urlpatterns = [
     path('latest/', LatestQRCodesView.as_view(), name='latest-qrcodes'),
     path('top/', TopQRCodesView.as_view(), name='top-qrcodes'),
     path('about/', AboutView.as_view(), name='about'),
+    path('signup/', SignUpView.as_view(), name='sign-up'),
+
+    # Auth
+    # ----
+    path('login/', auth_views.login, {'template_name': 'login.html'}, name='login'),
+    path('logout/', LogoutView.as_view(), name='logout'),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

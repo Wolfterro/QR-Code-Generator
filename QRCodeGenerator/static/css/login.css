@@ -1,0 +1,15 @@
+.main-div-login {
+	display: block;
+	text-align: center;
+	align-content: center;
+	border: 1px solid #333;
+	border-radius: 5px;
+	padding-bottom: 30px;
+}
+
+.user-name {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-family: LibreBaskerville-Regular;
+	font-size: 18px;
+}

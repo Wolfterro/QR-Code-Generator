@@ -46,6 +46,12 @@ body {
     border-radius: 0;
 }
 
+.login-fields {
+  color: #ffffff !important;
+  font-family: Skranji-Bold !important;
+  font-size: 14px !important;
+}
+
 .title {
 	color: #ffffff !important;
 	font-family: Skranji-Bold !important;

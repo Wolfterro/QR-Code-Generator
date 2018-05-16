@@ -19,6 +19,7 @@ class GenerateQRCodeView(View):
         description = request.POST.get('description')
         message_to_qr = request.POST.get('message_to_qr')
         tags = request.POST.getlist('tags[]')
+        user = request.user
 
         if title and message_to_qr:
             rnd_key = self.generate_random_key()
@@ -41,6 +42,10 @@ class GenerateQRCodeView(View):
                 tag = Tags.objects.get_or_create(name=tag_name)[0]
 
                 qrcode.tags.add(tag)
+                qrcode.save()
+
+            if not user.is_anonymous:
+                qrcode.author = user
                 qrcode.save()
 
             return qrcode
