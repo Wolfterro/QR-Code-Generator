@@ -14,8 +14,8 @@ class TagsAdmin(admin.ModelAdmin):
 class QRCodeAdmin(admin.ModelAdmin):
 
     def show_image(self, obj):
-        html = '<img src="%s" width="250" height="250" alt="QR Code" />' % (obj.get_image_url())
-        return format_html(html)
+        html = '<img src="%s" width="250" height="250" alt="QR Code" style="background-color: #fff;"/>'
+        return format_html(html % (obj.get_image_url()))
 
     def show_url(self, obj):
         html = '<a href="%s" target="_blank">%s</a>' % (obj.get_page_url(), obj.get_page_url())
