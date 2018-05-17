@@ -56,6 +56,7 @@ body {
 	color: #ffffff !important;
 	font-family: Skranji-Bold !important;
 	font-size: 32px !important;
+  border-right: 1px dashed #eee !important; 
 }
 
 .menu-options {

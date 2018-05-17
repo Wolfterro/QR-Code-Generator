@@ -1,32 +1,28 @@
-.create-qr-code {
-	font-family: Skranji-Bold;
-	font-size: 48px;
+.hr-dashed-black {
 	color: #333;
-	text-align: center;
+	border: 1px dashed #333;
+	margin-top: 50px;
+	margin-bottom: 20px;
 }
 
-.main-div {
-	display: block;
-	text-align: center;
-	align-content: center;
-}
+#saveBtn {
+	height: 50px;
+	width: 256px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border: 1px solid #333;
+	border-radius: 4px;
+	background-color: #fff;
 
-.field-title {
 	font-family: Skranji-Regular;
 	font-size: 24px;
 	color: #333;
 	text-align: center;
-	margin-top: 20px;
 }
 
-.form-mod {
-	border: 1px solid #333 !important;
-	border-radius: 4px !important;
-}
-
-#createBtn {
+#changePassword {
 	height: 50px;
-	width: 256px;
+	width: 320px;
 	margin-top: 30px;
 	margin-bottom: 30px;
 	border: 1px solid #333;

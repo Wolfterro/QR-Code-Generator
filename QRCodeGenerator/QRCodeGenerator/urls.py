@@ -26,6 +26,8 @@ from Website.views import (QRCodeView,
                            LatestQRCodesView,
                            AboutView,
                            SignUpView,
+                           AccountView,
+                           ChangePasswordView,
                            LogoutView)
 
 urlpatterns = [
@@ -38,6 +40,8 @@ urlpatterns = [
     path('latest/', LatestQRCodesView.as_view(), name='latest-qrcodes'),
     path('top/', TopQRCodesView.as_view(), name='top-qrcodes'),
     path('about/', AboutView.as_view(), name='about'),
+    path('account/', AccountView.as_view(), name='account'),
+    path('account/password/', ChangePasswordView.as_view(), name='account-password'),
     path('signup/', SignUpView.as_view(), name='sign-up'),
 
     # Auth

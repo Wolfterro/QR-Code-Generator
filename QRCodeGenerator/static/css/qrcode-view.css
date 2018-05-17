@@ -9,6 +9,11 @@
 	font-size: 56px;
 }
 
+.qrcode-title-2 {
+	font-family: Skranji-Bold;
+	font-size: 38px;
+}
+
 .qrcode-description {
 	margin-top: 20px;
 	margin-bottom: 20px;

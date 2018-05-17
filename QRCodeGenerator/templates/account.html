@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block active_account %}active{% endblock active_account %}
+{% block title %}Minha Conta{% endblock title %}
+
+{% block content %}
+<div class="wrapper container">
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+
+		<div class="col-md-4">
+			<div class="main-div">
+				<h1 class="qrcode-title">Minha Conta</h1>
+
+				<form method="post">
+	  				{% csrf_token %}
+					<br>
+					<p class="field-title">Usuário:</p>
+					{{ form.username }}
+
+					<p class="field-title">Nome:</p>
+					{{ form.first_name }}
+
+					<p class="field-title">Sobrenome:</p>
+					{{ form.last_name }}
+
+					<p class="field-title">E-Mail:</p>
+					{{ form.email }}
+
+					<br>
+					<button type="submit" id="saveBtn">Salvar</button>
+				</form>
+					
+				<hr class="hr-dashed-black">
+
+				<button id="changePassword">Alterar Senha</button>
+			</div>
+		</div>
+
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript">
+$("#changePassword").click(function() {
+	window.location.replace("/account/password/");
+});
+</script>
+{% endblock content %}
